@@ -9,12 +9,12 @@ class Book(models.Model):
     info = models.CharField("INFO", max_length=100, default="")
     market_price = models.DecimalField("mark_price", max_digits=8, decimal_places=3, default=0)
     pub = models.CharField('Public', max_length=50, default=" ")
+    is_activate = models.BooleanField('is activate or not', default=True)
 
     class Meta:
         db_table = "book"
 
     def __str__(self):
-        return '%s' % self.title
         return '%s_%s_%s_%s' % (self.title, self.price, self.pub, self.market_price)
 
 

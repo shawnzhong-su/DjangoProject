@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 import Django_learn.urls
 from Django_learn import urls as url
+from bookstore import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('learn/', include(url.posturlpatterns))
+    path('learn/', include(url.posturlpatterns)),
+    path('bookstore/', include(urls.post_url_pattern))
 
 ]

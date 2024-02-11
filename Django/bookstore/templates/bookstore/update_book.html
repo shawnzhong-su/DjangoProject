@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Book</title>
+</head>
+<body>
+<!-- 确保您的form标签包含了所有的输入字段和提交按钮 -->
+<form action="/bookstore/update_book/{{ book.id }}" method="post">
+    <!-- Django模板中使用csrf_token标签以防跨站请求伪造 -->
+    {% csrf_token %}
+    <p>
+        Title: <label>
+        <!-- 输入字段应该使用name属性来标识表单数据的键 -->
+        <input type="text" name="title" value="{{ book.title }}" disabled="disabled">
+        </label>
+    </p>
+    <p>
+        Publisher: <label>
+        <input type="text" name="pub" value="{{ book.pub }}" disabled="disabled">
+        </label>
+    </p>
+    <p>
+        Price: <label>
+        <input type="text" name="price" value="{{ book.price }}">
+        </label>
+    </p>
+    <p>
+        Market Price: <label>
+        <input type="text" name="market_price" value="{{ book.market_price }}">
+        </label>
+    </p>
+    <!-- 将提交按钮放在form标签内部 -->
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>
