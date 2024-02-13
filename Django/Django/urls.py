@@ -23,5 +23,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('learn/', include(url.posturlpatterns)),
     path('bookstore/', include(urls.post_url_pattern))
-
 ]

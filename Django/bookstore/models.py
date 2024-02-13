@@ -13,6 +13,8 @@ class Book(models.Model):
 
     class Meta:
         db_table = "book"
+        verbose_name = "书名"
+        verbose_name_plural = verbose_name
 
     def __str__(self):
         return '%s_%s_%s_%s' % (self.title, self.price, self.pub, self.market_price)
@@ -23,5 +25,20 @@ class Author(models.Model):
     age = models.IntegerField("Age", default=0)
     email = models.EmailField("Email", default=0)
 
+    class Meta:
+        db_table = "author"
+        verbose_name = "作者名称"
+        verbose_name_plural = verbose_name
+
     def __str__(self):
         return self.name
+
+
+class Wife(models.Model):
+    name = models.CharField("Wife", max_length=50)
+    author = models.OneToOneField(Author, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = "Wife"
+        verbose_name = "老婆"
+        verbose_name_plural = verbose_name
