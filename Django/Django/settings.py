@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Django_learn.apps.DjangoLearnConfig',
     'music',
-    'bookstore'
+    'bookstore',
+    'mtm',
+
 ]
 
 MIDDLEWARE = [
